@@ -1,0 +1,74 @@
+{
+  "name": "texecom2mqtt",
+  "version": "1.0.38",
+  "slug": "texecom2mqtt",
+  "description": "Add-on to interface with Texecom Premier Elite alarm panels using MQTT",
+  "url": "https://github.com/dchesterton/texecom2mqtt-hassio",
+  "startup": "application",
+  "image": "dchesterton/texecom2mqtt",
+  "boot": "auto",
+  "options": {
+    "texecom": {
+      "host": ""
+    },
+    "mqtt": {
+      "host": "core-mosquitto"
+    },
+    "homeassistant": {
+      "discovery": true
+    },
+    "areas": [],
+    "zones": []
+  },
+  "schema": {
+    "log": "str?",
+    "texecom": {
+      "host": "str",
+      "udl_password": "password?",
+      "port": "int?"
+    },
+    "mqtt": {
+      "host": "str?",
+      "port": "int?",
+      "username": "str?",
+      "password": "password?",
+      "retain": "bool?",
+      "retain_log": "bool?",
+      "qos": "int(0,2)?",
+      "client_id": "str?",
+      "keepalive": "int?",
+      "ca": "str?",
+      "cert": "str?",
+      "key": "str?"
+    },
+    "homeassistant": {
+      "discovery": "bool?",
+      "prefix": "str?"
+    },
+    "zones": [
+      {
+        "id": "str?",
+        "name": "str?",
+        "device_class": "str?"
+      }
+    ],
+    "areas": [
+      {
+        "id": "str?",
+        "name": "str?",
+        "full_arm": "str?",
+        "part_arm_1": "str?",
+        "part_arm_2": "str?",
+        "part_arm_3": "str?",
+        "code": "str?",
+        "code_arm_required": "bool?",
+        "code_disarm_required": "bool?"
+      }
+    ]
+  },
+  "arch": [
+    "amd64",
+    "armv7",
+    "aarch64"
+  ]
+}
